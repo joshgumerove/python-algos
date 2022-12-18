@@ -26,3 +26,4 @@ print(factorial(-10))
 # 3 steps for writing recursion
 # first: recursive case - the flow
 # two: base case - the stopping criterion
+# three: consider edge cases
