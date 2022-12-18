@@ -33,3 +33,7 @@ def fibonacci(n):
     return fibonacci(n -1) + fibonacci(n -2)
 
 print(fibonacci(10))
+
+# note - the time and space problems presented by recursion
+# note - recursion is not as fast as iteration
+# can improve time complexity through memoization
