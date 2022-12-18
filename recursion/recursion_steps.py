@@ -1,5 +1,7 @@
 def factorial(n):
-    if n == 0:
+    if n < 0:
+        return "error"
+    if n == 0: #if n in [0, 1]
         return 1
 
     return n * factorial(n -1)
@@ -8,7 +10,8 @@ def factorial(n):
 
 print(factorial(4))
 print(factorial(10))
-
+print(factorial(3))
+print(factorial(-10))
 
 
 
@@ -21,3 +24,4 @@ print(factorial(10))
 
 # 3 steps for writing recursion
 # first: recursive case - the flow
+# two: base case - the stopping criterion
