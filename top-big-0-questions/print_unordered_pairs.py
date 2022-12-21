@@ -8,3 +8,4 @@ printUnorderedPairs([2, 4, 6, 8], [4, 6, 8, 10])
 
 # time complexity O(xy)
 # note that this is not linear time complexity
+# outer and inner loops are running through
