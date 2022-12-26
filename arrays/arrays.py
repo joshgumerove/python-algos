@@ -56,4 +56,20 @@ def other_iteration(arr):
         
 other_iteration(arr_1)
 
-# searching for a given value in an array
+# searching for a given value in an array (checking whether a given value exists within an array)
+
+my_array = ["a", "b", "c", "d", "e", "h"]
+
+print(my_array.index("b")) # accessing an element using index
+
+        # binary search example below (very time efficient)
+        
+def find_element(array, element):
+    for value in array:
+        if value == element:
+            return array.index(value)
+    
+    return "value not found in array"
+
+print(find_element(my_array, "e"))
+print(find_element(my_array, "z"))
