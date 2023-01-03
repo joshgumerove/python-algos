@@ -73,3 +73,11 @@ def find_element(array, element):
 
 print(find_element(my_array, "e"))
 print(find_element(my_array, "z"))
+
+# deleting from an array
+
+other_array = array("u",["a", "b", "c", "d"])
+print(other_array)
+
+other_array.remove("b")
+print(other_array)
