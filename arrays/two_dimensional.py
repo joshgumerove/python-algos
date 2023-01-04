@@ -13,7 +13,7 @@ import numpy as np
 twoDArray = np.array([[11, 15, 10, 6],
                       [10, 14, 11, 5],
                       [12, 17, 12, 8],
-                      [11, 18, 14, 9]
+                      [15, 18, 14, 9]
                       ]) # better time complexity to instantiate with values right away
 
 print(twoDArray)
@@ -48,3 +48,10 @@ print(access_elements(twoDArray, 1, 10))
 print(access_elements(twoDArray, 2, 1))
 
 # Traversal of 2D array (Lesson 4)
+print("traversal section")
+def traverse2DArray(array):
+    for i in range(len(array)): #gives the number of rows
+        for j in range(len(array[0])): #not inclusive of last item in range
+            print(array[i][j])
+        
+traverse2DArray(twoDArray)
