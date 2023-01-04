@@ -22,3 +22,13 @@ print(twoDArray)
 
 # format must be matrix format to be recognized as 2D array
 
+newTwoDArray = np.insert(twoDArray, 0, [[1, 2, 3, 4]], axis=1) # if made axis zero would be added as a new column instead of a new row
+print(newTwoDArray)
+
+# adding to the end
+newTwoDArray = np.append(twoDArray, [[1, 2, 3, 4]], axis=0) # if made axis zero would be added as a new column instead of a new row
+print(newTwoDArray)
+
+# accessing elements of Two Dimensional Array (Lesson 3)
+
+print(twoDArray[0][2]) # a[i][j] row index then column index
