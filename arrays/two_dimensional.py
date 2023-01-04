@@ -32,3 +32,19 @@ print(newTwoDArray)
 # accessing elements of Two Dimensional Array (Lesson 3)
 
 print(twoDArray[0][2]) # a[i][j] row index then column index
+
+def access_elements(array,rowIndex, columnIndex):
+    if rowIndex > len(array) -1:
+        return "invalid row index"
+    
+    if columnIndex > len(array[0]) -1: # all have same length so can just use the first
+        return "invalid columnIndex index"
+    
+    return array[rowIndex][columnIndex]
+
+print(access_elements(twoDArray, 1, 2))
+print(access_elements(twoDArray, 10, 1))
+print(access_elements(twoDArray, 1, 10))
+print(access_elements(twoDArray, 2, 1))
+
+# Traversal of 2D array (Lesson 4)
