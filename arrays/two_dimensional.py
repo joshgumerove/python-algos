@@ -55,3 +55,26 @@ def traverse2DArray(array):
             print(array[i][j])
         
 traverse2DArray(twoDArray)
+
+# Searching for an element in a 2D Array (Lesson 5):
+# checking if a value exists in a 2D array
+# using linear search in this example
+
+twoDArray = np.array([[11, 15, 10, 6],
+                      [10, 14, 11, 5],
+                      [12, 17, 12, 8],
+                      [15, 18, 14, 9]])
+
+print(twoDArray)
+
+def search2DArray(arr, value):
+    for lst in arr:
+        for val in lst:
+            if val == value: # note this syntax (in JS use ===)
+                return True
+    return False
+            
+print(search2DArray(twoDArray, 8))
+print(search2DArray(twoDArray, 30))
+
+                
