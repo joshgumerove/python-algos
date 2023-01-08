@@ -56,7 +56,7 @@ def traverse2DArray(array):
         
 traverse2DArray(twoDArray)
 
-# Searching for an element in a 2D Array (Lesson 5):
+# Searching for an element in a 2D Array (Lesson 5)
 # checking if a value exists in a 2D array
 # using linear search in this example
 
@@ -77,4 +77,9 @@ def search2DArray(arr, value):
 print(search2DArray(twoDArray, 8))
 print(search2DArray(twoDArray, 30))
 
+#deletion from a 2D Array (Lesson 6)
+# O(mn) time complexity if deleting a column or a row
+
+newTDArray = np.delete(twoDArray, 0, axis=1)
+print(newTDArray)
                 
