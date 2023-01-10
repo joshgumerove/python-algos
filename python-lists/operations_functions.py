@@ -36,7 +36,7 @@ print(min(e)) # returns the smallest number/value in the list
 
 print(sum(e)) # sums up all elements in a list (only for integers)
 
-numberList = []
+number_list = []
 
 while True: # will run until we manually exit
     inp = input('Enter a number: ')
@@ -45,9 +45,9 @@ while True: # will run until we manually exit
         break
 
     value = float(inp)
-    numberList.append(value) # note how we had to convert the string to an integer/float
-    total = sum(numberList)
-    count = len(numberList)
+    number_list.append(value) # note how we had to convert the string to an integer/float
+    total = sum(number_list)
+    count = len(number_list)
     average = total/count
     
     print(average)
