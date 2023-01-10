@@ -23,7 +23,7 @@ def fun(m):
  
     return v
 print(fun(data[0]))
-# test questionis
+# test questions
 fruit_list1 = ['Apple', 'Berry', 'Cherry', 'Papaya']
 fruit_list2 = fruit_list1
 fruit_list3 = fruit_list1[:]
