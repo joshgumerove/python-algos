@@ -3,7 +3,6 @@
 def average(daily_highs):
     daily_high_sum = sum(daily_highs)
     days = len(daily_highs)
-    
     return daily_high_sum / days
 
 
