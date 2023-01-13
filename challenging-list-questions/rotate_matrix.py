@@ -22,7 +22,11 @@ matrix = [
 def transpose_matrix(matrix):
     for i in range(len(matrix)):
         for j in range(i, len(matrix)):
-            matrix[i][j] = matrix[j][i]
+            # matrix[i][j] = matrix[j][i]
+            top = matrix[i][j]
+            bottom = matrix[j][i]
+            matrix[j][i] = top
+            matrix[i][j] = bottom
     
     return matrix      
 # [
@@ -55,5 +59,18 @@ def rotate_matrix(matrix):
     return reverse_rows(transposed_matrix)
 
 
-print(rotate_matrix(matrix))    
+# print(rotate_matrix(matrix))    
+
+
+def own_solution(matrix):
+    for i in range(len(matrix)):
+        for j in range(i, len(matrix)):
+            top = matrix[i][j]
+            bottom = matrix[j][i]
+            matrix[i][j] = bottom
+            matrix[j][i] = top
+    return matrix
+
+print("other solution: ", transpose_matrix(matrix))
+# print("own solution: ", own_solution(matrix))
         
