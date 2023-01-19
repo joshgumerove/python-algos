@@ -21,3 +21,16 @@ print("*****")
  
 [print(sum(x)) for x in [init_tuple_a + init_tuple_b]] # only one tuple
 
+init_tuple = [(0, 1), (1, 2), (2, 3)]
+ 
+result = sum(n for _, n in init_tuple)
+ 
+print(result)
+
+for _, n in init_tuple:
+    print(n)
+    print("other: ", _)
+
+print((n for n in init_tuple))
+
+
