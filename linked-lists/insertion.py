@@ -40,10 +40,6 @@ class LinkedList():
                 new_next = new_node
                 temp_node.next = new_next
                 new_next.next = old_next
-
-
-                
-        
         
 class Node():
     def __init__(self, value):
