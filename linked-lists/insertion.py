@@ -6,7 +6,6 @@ class LinkedList():
     def __init__(self):
         self.head = None
         self.tail = None
-        self.length = 0
         
     def __iter__(self):
         node = self.head
@@ -49,6 +48,21 @@ class LinkedList():
             while node is not None:
                 print(node.value)
                 node = node.next
+                
+    def search_value(self, value):
+        if self.head is None:
+            print("The Singly Linked List does not exist")
+        else:
+            node = self.head
+            postion = 0
+            while node is not None:
+                if node.value == value:
+                    print(f"{value} found at postion {postion}")
+                    return
+                node = node.next
+                postion += 1
+                
+        print("value not in list")
             
         
 class Node():
@@ -79,3 +93,4 @@ list2.traverse_ssl()
 
 
 
+list1.search_value(99)
