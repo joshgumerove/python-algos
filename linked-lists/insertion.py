@@ -40,6 +40,16 @@ class LinkedList():
                 new_next = new_node
                 temp_node.next = new_next
                 new_next.next = old_next
+   
+    def traverse_ssl(self):
+        if self.head is None:
+            print("The Singly Linked List does not exist")
+        else:
+            node = self.head 
+            while node is not None:
+                print(node.value)
+                node = node.next
+            
         
 class Node():
     def __init__(self, value):
@@ -64,6 +74,7 @@ list2.insert_into_list(0, 0)
 list2.insert_into_list(0, 3) # inserted after the third element
 
 print([node.value for node in list2])
+list2.traverse_ssl()
 
 
 
