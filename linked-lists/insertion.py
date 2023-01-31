@@ -90,7 +90,4 @@ list2.insert_into_list(0, 3) # inserted after the third element
 print([node.value for node in list2])
 list2.traverse_ssl()
 
-
-
-
 list1.search_value(99)
