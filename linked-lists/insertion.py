@@ -101,6 +101,10 @@ class LinkedList():
                 current_next = current_node.next
                 new_next_node = current_next.next
                 current_node.next = new_next_node
+    
+    def delete_list(self):
+        self.head = None
+        self.tail = None  
                 
                             
                         
@@ -156,4 +160,6 @@ list3.traverse_ssl()
 
 print("remove from elsewhere")
 list3.delete_node(2)
+list3.traverse_ssl()
+list3.delete_list()
 list3.traverse_ssl()
