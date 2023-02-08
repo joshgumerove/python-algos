@@ -19,10 +19,17 @@ class CircularLinkedList():
             if node.next == self.head:
                 break
             node = node.next
+            
+    def create_CSLL(self, nodeValue):
+        node = Node(nodeValue)
+        node.next = node # to make the node reference itself / at creation will only be single node so head and tail should be the same
+        self.head = node
+        self.tail = node
+        return "CSLL has been created"
 
-        
 
-node_1 = Node()
+# execution of DS
 list_1 = CircularLinkedList()
+list_1.create_CSLL(10)
+print([node.value for node in list_1])
 
-print(node_1.value)
