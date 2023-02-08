@@ -160,6 +160,6 @@ list3.traverse_ssl()
 
 print("remove from elsewhere")
 list3.delete_node(2)
-list3.traverse_ssl()
+print([node.value for node in list3])
 list3.delete_list()
-list3.traverse_ssl()
+print([node.value for node in list3])
