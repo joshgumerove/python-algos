@@ -104,6 +104,9 @@ list_2.traversal()
 
 list_1.search_value(30)
 list_1.search_value(300)
+list_1.search_value(50)
+print(list_1.tail.value)
+print(list_1.head.value)
 
 
 
