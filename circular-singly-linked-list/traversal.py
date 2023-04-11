@@ -65,6 +65,18 @@ class CircularLinkedList():
             if current_node.next == self.head:
                 break
             current_node = current_node.next
+            
+    def search_value(self, val):
+        current_node = self.head 
+        while current_node:
+            if current_node.value == val:
+                print('the value was found', current_node.value)
+                return
+            if current_node == self.tail:
+                print('value not found')
+                return
+            
+            current_node = current_node.next
         
         
     
@@ -89,6 +101,9 @@ list_1.traversal()
 # creating an empty list to test traversal
 list_2 = CircularLinkedList()
 list_2.traversal()
+
+list_1.search_value(30)
+list_1.search_value(300)
 
 
 
