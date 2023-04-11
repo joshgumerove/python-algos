@@ -77,6 +77,13 @@ class CircularLinkedList():
                 return
             
             current_node = current_node.next
+            
+    def SCLL_deletion(self, location):
+        if location == 1:
+            current_head = self.head
+            new_head = current_head.next
+            self.head = new_head
+            
         
         
     
@@ -107,8 +114,8 @@ list_1.search_value(300)
 list_1.search_value(50)
 print(list_1.tail.value)
 print(list_1.head.value)
-
-
+list_1.SCLL_deletion(1)
+print(list_1.head)
 
 
 
