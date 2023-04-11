@@ -82,7 +82,37 @@ class CircularLinkedList():
         if location == 1:
             current_head = self.head
             new_head = current_head.next
+            self.tail.next = new_head
             self.head = new_head
+            return
+            
+        if location == -1:
+            current_tail = self.tail
+            current_node = self.head
+            
+            while current_node:
+                if current_node.next == current_tail:
+                    current_node.next = self.head
+                    self.tail = current_node
+                    return
+                current_node = current_node.next
+                
+        current_location = 1
+        current_node = self.head
+        
+        while current_location != location -1:
+            current_node = current_node.next
+            current_location += 1
+            print(current_location, 'current location')
+        nextNode = current_node.next
+        print('what is next node: ', nextNode.value)
+        current_node.next = nextNode.next
+        print(current_node.next.value, 'this is new')
+        
+        
+            
+                
+                
             
         
         
@@ -100,6 +130,10 @@ list_1.insert_CSLL(50, 0) # insert at beginning
 list_1.insert_CSLL(30, -1) # insert at end
 list_1.insert_CSLL(1984, 1)
 list_1.insert_CSLL(1985, 2)
+list_1.insert_CSLL(50000, -1)
+list_1.insert_CSLL(5000, -1)
+list_1.insert_CSLL(520, -1)
+
 print([node.value for node in list_1])
 print(list_1.tail.value)
 print(list_1.tail.next.value)
@@ -115,7 +149,15 @@ list_1.search_value(50)
 print(list_1.tail.value)
 print(list_1.head.value)
 list_1.SCLL_deletion(1)
-print(list_1.head)
+print(list_1.head.value, 'is')
+print(list_1.tail.next.value, 'is')
+print(list_1.tail.value, 'what is the value')
+list_1.SCLL_deletion(-1)
+print(list_1.tail.value, 'what is the value')
+
+list_1.SCLL_deletion(5)
+
+
 
 
 
