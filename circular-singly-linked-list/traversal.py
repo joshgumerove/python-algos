@@ -79,7 +79,7 @@ class CircularLinkedList():
             current_node = current_node.next
             
     def SCLL_deletion(self, location):
-        if location == 1:
+        if location == 0:
             current_head = self.head
             new_head = current_head.next
             self.tail.next = new_head
@@ -97,7 +97,7 @@ class CircularLinkedList():
                     return
                 current_node = current_node.next
                 
-        current_location = 1
+        current_location = 0
         current_node = self.head
         
         while current_location != location -1:
@@ -108,6 +108,11 @@ class CircularLinkedList():
         print('what is next node: ', nextNode.value)
         current_node.next = nextNode.next
         print(current_node.next.value, 'this is new')
+    
+    def delete_entire_list(self):
+        self.head = None
+        self.tail.next = None
+        self.tail = None
         
         
             
@@ -156,6 +161,20 @@ list_1.SCLL_deletion(-1)
 print(list_1.tail.value, 'what is the value')
 
 list_1.SCLL_deletion(5)
+
+list_10 = CircularLinkedList()
+list_10.create_CSLL(49)
+list_10.insert_CSLL(50, 1)
+list_10.insert_CSLL(51, 2)
+list_10.insert_CSLL(52, 3)
+list_10.insert_CSLL(53, 4)
+print(list_10.head.value, "is")
+print([node.value for node in list_10])
+print(list_10.SCLL_deletion(2))
+print([node.value for node in list_10])
+list_10.delete_entire_list()
+print([node.value for node in list_10])
+
 
 
 
