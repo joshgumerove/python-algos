@@ -24,10 +24,20 @@ class DoubleLinkedList():
         
         return 'the DLL is created'
     
+    def insertion(self, nodeValue):
+        newNode = Node(nodeValue)
+        oldHead = self.head
+        oldHead.prev = newNode
+        newNode.next = oldHead
+        self.head = newNode
+        self.tail = oldHead
+    
     
 double_1 = DoubleLinkedList()
 double_1.create_DLL(5)
-print(double_1.head.prev)
+double_1.insertion(4)
+
 print([node.value for node in double_1])
+
                         
         
