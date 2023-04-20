@@ -55,7 +55,7 @@ class DoubleLinkedList():
         
         else: 
             current_node = self.head
-            while current_node != None:
+            while current_node:
                 print("the value is: ", current_node.value)
                 current_node = current_node.next
         return 'done'
@@ -66,7 +66,7 @@ class DoubleLinkedList():
             
         else:
             current_node = self.tail
-            while current_node != None:
+            while current_node:
                 print(current_node.value, "look")
                 current_node = current_node.prev
             return "done"
