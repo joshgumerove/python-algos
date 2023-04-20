@@ -71,6 +71,18 @@ class DoubleLinkedList():
                 current_node = current_node.prev
             return "done"
         
+    def search_value(self, value):
+        if self.head is None:
+            return "no linked list"
+        
+        current_node = self.head
+        while current_node:
+            if current_node.value == value:
+                return f"your value has been found: {current_node.value}"
+            current_node = current_node.next
+            
+        return 'value not found'
+        
                             
                 
     
@@ -96,7 +108,9 @@ double_1.traverse()
 double_1.reverse_traverse()
 double_2 = DoubleLinkedList()
 double_2.traverse()
+
 print(double_2.tail)
+print(double_1.search_value(50))
 
 
 
