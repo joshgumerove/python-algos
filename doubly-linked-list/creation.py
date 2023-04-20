@@ -26,19 +26,19 @@ class DoubleLinkedList():
     
     def insertion(self, nodeValue, location):
         if location == 1:
-            newNode = Node(nodeValue)
-            oldHead = self.head
-            oldHead.prev = newNode
-            newNode.next = oldHead
-            self.head = newNode
-            self.tail = oldHead
+            new_node = Node(nodeValue)
+            old_head = self.head
+            old_head.prev = new_node
+            new_node.next = old_head
+            self.head = new_node
+            self.tail = old_head
             
         elif location == -1:
-            newNode = Node(nodeValue)
-            oldTail = self.tail
-            oldTail.next = newNode
-            newNode.prev = oldTail
-            self.tail = newNode
+            new_node = Node(nodeValue)
+            old_tail = self.tail
+            old_tail.next = new_node
+            new_node.prev = old_tail
+            self.tail = new_node
             
         else:
             current_location = 1
