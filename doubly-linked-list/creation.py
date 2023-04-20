@@ -29,7 +29,6 @@ class DoubleLinkedList():
             old_head.prev = new_node
             new_node.next = old_head
             self.head = new_node
-            self.tail = old_head
             
         elif location == -1:
             new_node = Node(nodeValue)
@@ -41,7 +40,7 @@ class DoubleLinkedList():
         else:
             current_location = 1
             current_node = self.head
-            while current_location != location -1:
+            while current_location < location:
                 current_node = current_node.next
                 current_location = current_location + 1
             new_node = Node(nodeValue)
@@ -49,6 +48,29 @@ class DoubleLinkedList():
             new_node.prev = current_node
             new_node.next.prev = new_node
             current_node.next = new_node
+            
+    def traverse(self):
+        if self.head is None:
+            print("there is no linked list")
+        
+        else: 
+            current_node = self.head
+            while current_node != None:
+                print("the value is: ", current_node.value)
+                current_node = current_node.next
+        return 'done'
+    
+    def reverse_traverse(self):
+        if self.head is None:
+            print("there is no value")
+            
+        else:
+            current_node = self.tail
+            while current_node != None:
+                print(current_node.value, "look")
+                current_node = current_node.prev
+            return "done"
+        
                             
                 
     
@@ -69,6 +91,13 @@ print(double_1.tail.prev.value)
 double_1.insertion(5000, 3)
 double_1.insertion(100000, 1)
 print([node.value for node in double_1])
+
+double_1.traverse()
+double_1.reverse_traverse()
+double_2 = DoubleLinkedList()
+double_2.traverse()
+print(double_2.tail)
+
 
 
                         
