@@ -17,8 +17,6 @@ class DoubleLinkedList():
             
     def create_DLL(self, nodeValue):
         node = Node(nodeValue)
-        # node.prev = None
-        # node.next = None
         self.head = node
         self.tail = node
         
@@ -66,7 +64,10 @@ print([node.value for node in double_1])
 print(double_1.head.prev)
 print(double_1.head.next.value)
 print(double_1.tail.prev.value)
+
+
 double_1.insertion(5000, 3)
+double_1.insertion(100000, 1)
 print([node.value for node in double_1])
 
 
