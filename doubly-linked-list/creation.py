@@ -19,28 +19,24 @@ class DoubleLinkedList():
         node = Node(nodeValue)
         self.head = node
         self.tail = node
-        
         return 'the DLL is created'
     
     def insertion(self, nodeValue, location):
         if self.head is None and location == 1:
             self.create_DLL(nodeValue)
             return
-            
         if location == 1:
             new_node = Node(nodeValue)
             old_head = self.head
             old_head.prev = new_node
             new_node.next = old_head
-            self.head = new_node
-            
+            self.head = new_node 
         elif location == -1:
             new_node = Node(nodeValue)
             old_tail = self.tail
             old_tail.next = new_node
             new_node.prev = old_tail
-            self.tail = new_node
-            
+            self.tail = new_node  
         else:
             current_location = 1
             current_node = self.head
@@ -76,7 +72,6 @@ class DoubleLinkedList():
     def search_value(self, value):
         if self.head is None:
             return "no linked list"
-        
         current_node = self.head
         while current_node:
             if current_node.value == value:
@@ -89,7 +84,7 @@ class DoubleLinkedList():
             return "there is no element in DLL"
         if location == 1:
             current_node = self.head
-            if self.head.next is None:
+            if self.head == self.tail:
                 self.head = None
                 self.tail = None
             else:
@@ -121,8 +116,6 @@ class DoubleLinkedList():
         
                             
                 
-    
-    
 double_1 = DoubleLinkedList()
 double_1.create_DLL(5)
 double_1.insertion(4, 1)
