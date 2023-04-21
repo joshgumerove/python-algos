@@ -94,7 +94,7 @@ class DoubleLinkedList():
                 self.head = new_head
         elif location == -1:
             current_node = self.tail
-            if self.tail == self.tail:
+            if self.tail == self.head:
                 self.tail = None
                 self.head = None
             else:
@@ -108,10 +108,10 @@ class DoubleLinkedList():
             while current_location < location -1:
                 current_node = current_node.next
                 current_location +=1
-            old_previous = current_node.prev
             old_next = current_node.next
-            current_node.prev = old_previous.prev
-            current_node.next = old_next.next
+            new_next = old_next.next
+            current_node.next = new_next
+            current_node.next.prev = current_node
             
                 
         
@@ -158,6 +158,9 @@ print([node.value for node in double_3])
 double_3.delete_node(-1)
 print([node.value for node in double_3])
 print(double_3.head)
+
+print([node.value for node in double_1])
+double_1.reverse_traverse()
 
 
 
