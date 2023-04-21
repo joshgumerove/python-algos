@@ -23,6 +23,10 @@ class DoubleLinkedList():
         return 'the DLL is created'
     
     def insertion(self, nodeValue, location):
+        if self.head is None and location == 1:
+            self.create_DLL(nodeValue)
+            return
+            
         if location == 1:
             new_node = Node(nodeValue)
             old_head = self.head
@@ -81,6 +85,8 @@ class DoubleLinkedList():
         return 'value not found'
     
     def delete_node(self, location):
+        if self.head is None:
+            return "there is no element in DLL"
         if location == 1:
             current_node = self.head
             if self.head.next is None:
@@ -151,7 +157,8 @@ double_1.delete_node(3)
 print([node.value for node in double_1])
 
 double_3 = DoubleLinkedList()
-double_3.create_DLL(10)
+# double_3.create_DLL(10)
+double_3.insertion(10, 1)
 print([node.value for node in double_3])
 
 double_3.delete_node(-1)
