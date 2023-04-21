@@ -100,6 +100,7 @@ class DoubleLinkedList():
             else:
                 old_tail = current_node
                 new_tail = old_tail.prev
+                new_tail.next = None
                 self.tail = new_tail  
         else:
             current_location = 1
