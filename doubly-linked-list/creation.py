@@ -84,7 +84,8 @@ class DoubleLinkedList():
         if location == 1:
             current_node = self.head
             if self.head.next is None:
-                current_node = None
+                self.head = None
+                self.tail = None
             else:
                 old_head = current_node
                 new_head = old_head.next
@@ -149,14 +150,13 @@ print([node.value for node in double_1])
 double_1.delete_node(3)
 print([node.value for node in double_1])
 
-# double_3 = DoubleLinkedList()
-# double_3.create_DLL(10)
-# print([node.value for node in double_3])
+double_3 = DoubleLinkedList()
+double_3.create_DLL(10)
+print([node.value for node in double_3])
 
-# print([node.value for node in double_3])
-# double_3.delete_node(-1)
-# print([node.value for node in double_3])
-# print(double_3.head)
+double_3.delete_node(-1)
+print([node.value for node in double_3])
+print(double_3.head)
 
 
 
