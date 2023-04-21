@@ -94,7 +94,7 @@ class DoubleLinkedList():
                 self.head = new_head
         elif location == -1:
             current_node = self.tail
-            if self.tail.prev is None:
+            if self.tail == self.tail:
                 self.tail = None
                 self.head = None
             else:
