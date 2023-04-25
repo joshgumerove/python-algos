@@ -52,6 +52,14 @@ class Circular_DLL():
             new_node.next = old_next
             old_next.prev = new_node
             current_node.next.prev = current_node
+            
+    def traverse(self):
+        current_node = self.head
+        while current_node:
+            print("the current value is: ", current_node.value)
+            if current_node.next == self.head:
+                break
+            current_node = current_node.next
                                
 double_1 = Circular_DLL()
 double_1.create_CDLL(10)
@@ -67,3 +75,4 @@ double_1.insert(52525, -1)
 
 print([node.value for node in double_1])
 print(double_1.tail.next.value)
+double_1.traverse()
