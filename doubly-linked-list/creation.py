@@ -113,6 +113,22 @@ class DoubleLinkedList():
             current_node.next = new_next
             current_node.next.prev = current_node
             
+    def delete_DLL(self): 
+        # need to break links even if not connected to head
+        if self.head is None:
+            print("no elements in DLL")
+        else:
+            current_node = self.head
+            while current_node:
+                current_node.prev = None # even if at head can still do this operation
+                current_node = current_node.next
+            self.head = None
+            self.tail = None
+            print('completed operation')
+        
+         
+        
+            
                 
         
                             
@@ -160,7 +176,11 @@ print([node.value for node in double_3])
 print(double_3.head)
 
 print([node.value for node in double_1])
-double_1.reverse_traverse()
+# double_1.reverse_traverse()
+double_1.delete_DLL()
+
+print([node.value for node in double_1])
+
 
 
 
