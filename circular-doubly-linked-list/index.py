@@ -76,11 +76,15 @@ class Circular_DLL():
                                
 double_1 = Circular_DLL()
 double_1.create_CDLL(10)
+
 print(double_1.head.prev.value)
 print([node.value for node in double_1])
+
 double_1.insert(100, 1)
 double_1.insert(200, 1)
 double_1.insert(5, -1)
 double_1.insert(50000, 3)
+double_1.insert(52525, -1)
+
 print([node.value for node in double_1])
 print(double_1.tail.next.value)
