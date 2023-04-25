@@ -68,6 +68,20 @@ class Circular_DLL():
             if current_node == self.head:
                 break
             current_node = current_node.prev
+            
+    def search(self, searchVal):
+        if self.head is None:
+            return "there are no values to search"
+        current_node = self.head
+        while current_node:
+            if current_node.value == searchVal:
+                print("the value has been found: ", current_node.value)
+                break
+            if current_node == self.tail:
+                print("value not found: ", searchVal)
+                break
+            current_node = current_node.next
+            
                                
 double_1 = Circular_DLL()
 double_1.create_CDLL(10)
@@ -86,3 +100,8 @@ print(double_1.tail.next.value)
 
 double_1.traverse()
 double_1.reverse_traverse()
+
+double_1.search(50000)
+double_1.search(200)
+double_1.search(52525)
+double_1.search(100000000)
