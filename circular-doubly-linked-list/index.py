@@ -60,6 +60,14 @@ class Circular_DLL():
             if current_node.next == self.head:
                 break
             current_node = current_node.next
+            
+    def reverse_traverse(self):
+        current_node = self.tail
+        while current_node:
+            print("reverse traversal value: ", current_node.value)
+            if current_node.prev == self.tail:
+                break
+            current_node = current_node.prev
                                
 double_1 = Circular_DLL()
 double_1.create_CDLL(10)
@@ -75,4 +83,6 @@ double_1.insert(52525, -1)
 
 print([node.value for node in double_1])
 print(double_1.tail.next.value)
+
 double_1.traverse()
+double_1.reverse_traverse()
