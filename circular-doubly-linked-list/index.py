@@ -29,13 +29,11 @@ class Circular_DLL():
         new_node = Node(nodeValue)
         if location == 1:
             if self.head == self.tail:
-                old_head = self.head
-                new_head = new_node
-                new_head.next = old_head
-                new_head.next.prev = new_head
-                old_head.next = new_head
-                self.head = new_head
-                self.tail = old_head
+                new_node.prev = self.tail
+                new_node.next = self.head
+                new_node.next.prev = new_node
+                self.head = new_node
+                self.tail.next = new_node
                 
             else:
                 old_head = self.head
