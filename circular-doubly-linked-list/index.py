@@ -53,11 +53,11 @@ class Circular_DLL():
             old_next.prev = new_node
             current_node.next.prev = current_node
             
-    def traverse(self):
+    def traverse(self): # should check if list has any values at beginning hypothetically
         current_node = self.head
         while current_node:
             print("the current value is: ", current_node.value)
-            if current_node.next == self.head:
+            if current_node == self.tail:
                 break
             current_node = current_node.next
             
@@ -65,7 +65,7 @@ class Circular_DLL():
         current_node = self.tail
         while current_node:
             print("reverse traversal value: ", current_node.value)
-            if current_node.prev == self.tail:
+            if current_node == self.head:
                 break
             current_node = current_node.prev
                                
