@@ -28,37 +28,18 @@ class Circular_DLL():
     def insert(self, nodeValue, location):
         new_node = Node(nodeValue)
         if location == 1:
-            if self.head == self.tail:
-                new_node.prev = self.tail
-                new_node.next = self.head
-                new_node.next.prev = new_node
-                self.head = new_node
-                self.tail.next = new_node
-                
-            else:
-                old_head = self.head
-                new_head = new_node
-                new_head.next = old_head
-                new_head.next.prev = new_head
-                new_head.prev = self.tail
-                new_head.prev.next = new_head
-                self.head = new_head
-                
+            new_node.prev = self.tail
+            new_node.next = self.head
+            new_node.next.prev = new_node
+            self.head = new_node
+            self.tail.next = new_node
+                                
         elif location == -1:
-            if self.head == self.tail:
-                old_tail = self.tail
-                new_tail = new_node
-                old_tail.next = new_tail
-                old_tail.next.prev = old_tail
-                self.tail = new_tail
-            else:
-                old_tail = self.tail
-                new_tail = new_node
-                old_tail.next = new_tail
-                old_tail.next.prev = old_tail
-                new_tail.next = self.head
-                new_tail.next.prev = new_tail
-                self.tail = new_tail
+            new_node.next = self.head
+            new_node.prev = self.tail
+            new_node.prev.next = new_node
+            new_node.next.prev = new_node
+            self.tail = new_node
                 
         else:
             current_location = 1
