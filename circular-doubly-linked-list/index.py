@@ -104,7 +104,6 @@ class Circular_DLL():
                 self.tail.next = None
                 self.tail = None
             else:
-                current_tail = self.tail
                 new_tail = self.tail.prev
                 new_tail.next = self.head
                 new_tail.next.prev = new_tail
