@@ -106,7 +106,7 @@ class Circular_DLL():
             else:
                 new_tail = self.tail.prev
                 new_tail.next = self.head
-                new_tail.next.prev = new_tail
+                self.head.prev = new_tail
                 self.tail = new_tail
         else:
             current_node = self.head
