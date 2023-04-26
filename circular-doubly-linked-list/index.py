@@ -96,6 +96,7 @@ class Circular_DLL():
                 current_head = self.head
                 next_head = current_head.next
                 next_head.prev = self.tail
+                self.tail.next = next_head
                 self.head = next_head
         elif location == -1:
             if self.head == self.tail:
@@ -174,3 +175,5 @@ double_1.delete_node(3)
 print([node.value for node in double_1])
 double_1.traverse()
 double_1.reverse_traverse()
+# double_1.delete_node(-1)
+print([node.value for node in double_1])
