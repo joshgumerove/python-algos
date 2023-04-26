@@ -82,6 +82,23 @@ class Circular_DLL():
                 break
             current_node = current_node.next
             
+    def delete_node(self, location):
+        if self.head is None:
+            return 'no nodes in linked list'
+        
+        
+        if location == 1:
+            if self.head == self.tail:
+                self.head = None
+                self.tail.next = None
+                self.tail = None
+            else:  
+                current_head = self.head
+                next_head = current_head.next
+                next_head.prev = self.tail
+                self.head = next_head
+            
+            
                                
 double_1 = Circular_DLL()
 double_1.create_CDLL(10)
@@ -105,3 +122,18 @@ double_1.search(50000)
 double_1.search(200)
 double_1.search(52525)
 double_1.search(100000000)
+
+print([node.value for node in double_1])
+
+double_1.delete_node(1)
+
+print([node.value for node in double_1])
+
+print(double_1.head.prev.value)
+
+double_2 = Circular_DLL()
+double_2.create_CDLL(32)
+
+print([node.value for node in double_2])
+double_2.delete_node(1)
+print([node.value for node in double_2])
