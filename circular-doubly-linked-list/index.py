@@ -120,10 +120,16 @@ class Circular_DLL():
             current_node.next.prev = current_node
     
     def delete_CDLL(self):
-        self.head = None
-        self.tail = None
-
-            
+        if self.head is None:
+            return "does not have nodes"
+        else:
+            self.tail.next = None
+            current_node = self.head
+            while current_node:
+                current_node.prev = None
+                current_node = current_node.next
+            self.head = None
+            self.tail = None        
             
                                
 double_1 = Circular_DLL()
@@ -182,3 +188,5 @@ double_1.reverse_traverse()
 print([node.value for node in double_1])
 double_1.delete_CDLL()
 print([node.value for node in double_1])
+print("*******")
+double_1.reverse_traverse()
