@@ -97,6 +97,28 @@ class Circular_DLL():
                 next_head = current_head.next
                 next_head.prev = self.tail
                 self.head = next_head
+        elif location == -1:
+            if self.head == self.tail:
+                self.head = None
+                self.tail.next = None
+                self.tail = None
+            else:
+                current_tail = self.tail
+                new_tail = self.tail.prev
+                new_tail.next = self.head
+                new_tail.next.prev = new_tail
+                self.tail = new_tail
+        else:
+            current_node = self.head
+            current_location = 1
+            
+            while current_location < location -1:
+                current_node = current_node.next
+                current_location += 1
+            old_next = current_node.next
+            current_node.next = old_next.next
+            current_node.next.prev = current_node
+
             
             
                                
@@ -137,3 +159,18 @@ double_2.create_CDLL(32)
 print([node.value for node in double_2])
 double_2.delete_node(1)
 print([node.value for node in double_2])
+
+print([node.value for node in double_1])
+double_1.delete_node(-1)
+print([node.value for node in double_1])
+double_1.traverse()
+double_1.reverse_traverse()
+
+double_1.insert(2222, 1)
+double_1.insert(33333, -1)
+print([node.value for node in double_1])
+
+double_1.delete_node(3)
+print([node.value for node in double_1])
+double_1.traverse()
+double_1.reverse_traverse()
