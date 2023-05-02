@@ -28,7 +28,7 @@ class LinkedList():
         result = 0
         node = self.head
         while node:
-            resut += 1
+            result += 1
             node = node.next
         return result
     
@@ -49,7 +49,12 @@ class LinkedList():
             self.add(randint(min_value, max_value))
         return self
         
-            
-        
+first_list = LinkedList()
+first_list.generate(10, 20, 60) 
+
+print(first_list)
+print(len(first_list))
+
+
         
         
