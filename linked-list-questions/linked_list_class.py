@@ -49,14 +49,14 @@ class LinkedList():
             self.add(randint(min_value, max_value))
         return self
         
-first_list = LinkedList()
-first_list.generate(10, 20, 60) 
+# first_list = LinkedList()
+# first_list.generate(10, 20, 60) 
 
-print(first_list)
-print(len(first_list))
+# print(first_list)
+# print(len(first_list))
 
-first_list.add(1000)
-print(first_list)
+# first_list.add(1000)
+# print(first_list)
 
 
         
