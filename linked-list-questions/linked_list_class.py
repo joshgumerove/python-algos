@@ -22,7 +22,7 @@ class LinkedList():
             
     def __str__(self):
         values = [str(x.value) for x in self]
-        return '->'.join(values)
+        return ' -> '.join(values)
     
     def __len__(self):
         result = 0
@@ -54,6 +54,9 @@ first_list.generate(10, 20, 60)
 
 print(first_list)
 print(len(first_list))
+
+first_list.add(1000)
+print(first_list)
 
 
         
