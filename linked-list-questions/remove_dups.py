@@ -1,9 +1,9 @@
 from linked_list_class import LinkedList
-    
+
 #     def remove_dups(self):
 #         current_node = self.head
 #         values = {current_node.value}
-        
+
 #         while current_node.next:
 #             if current_node.next.value in values:
 #                 current_node.next = current_node.next.next
@@ -11,9 +11,10 @@ from linked_list_class import LinkedList
 #                 values.add(current_node.next.value)
 #                 current_node = current_node.next
 
+
 def remove_dups(linked_list):
     if linked_list.head is None:
-        return 
+        return
     else:
         current_node = linked_list.head
         values = {current_node.value}
@@ -24,6 +25,7 @@ def remove_dups(linked_list):
                 values.add(current_node.next.value)
                 current_node = current_node.next
     return linked_list
+
 
 def remove_dups1(linked_list):
     if linked_list.head is None:
@@ -37,20 +39,16 @@ def remove_dups1(linked_list):
             else:
                 runner = runner.next
         current_node = current_node.next
-            
-                    
-        
-first_list = LinkedList()
-first_list.generate(5, 0, 10000)
-first_list.add(10)
-first_list.add(10)
-first_list.add(10)
-print(first_list)
-remove_dups(first_list)
-print(first_list)
-print("********")
-remove_dups1(first_list)
-print(first_list)
 
-      
-        
+
+# first_list = LinkedList()
+# first_list.generate(5, 0, 10000)
+# first_list.add(10)
+# first_list.add(10)
+# first_list.add(10)
+# print(first_list)
+# remove_dups(first_list)
+# print(first_list)
+# print("********")
+# remove_dups1(first_list)
+# print(first_list)
