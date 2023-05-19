@@ -8,7 +8,7 @@ class Queue():
         return " ".join(values)
 
     def enqueue(self, value):
-        self.items.insert(0, value)
+        self.items.append(value)
 
     def is_empty(self):
         if len(self.items):
@@ -18,12 +18,12 @@ class Queue():
     def dequeue(self):
         if self.is_empty():
             return "no values in queue"
-        return self.items.pop()
+        self.items.remove(self.items[0])
 
     def peek(self):
         if self.is_empty():
             return "no values in queue"
-        return self.items[-1]
+        return self.items[0]
 
     def delete(self):
         self.items = []
@@ -41,8 +41,9 @@ custom_queue.enqueue(10)
 custom_queue.enqueue(15)
 custom_queue.enqueue(20)
 print(custom_queue)
-print(custom_queue.dequeue())
-print(custom_queue.dequeue())
+custom_queue.dequeue()
+print(custom_queue)
+custom_queue.dequeue()
 print(custom_queue.peek())
 print(custom_queue.dequeue())
 print(custom_queue.dequeue())
