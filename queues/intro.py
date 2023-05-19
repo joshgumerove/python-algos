@@ -18,7 +18,7 @@ class Queue():
     def dequeue(self):
         if self.is_empty():
             return "no values in queue"
-        self.items.remove(self.items[0])
+        return self.items.pop(0)
 
     def peek(self):
         if self.is_empty():
