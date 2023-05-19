@@ -2,6 +2,11 @@ class Queue():
     def __init__(self):
         self.items = []
 
+    def __str__(self):
+        values = [str(item) for item in self.items]
+
+        return " ".join(values)
+
     def enqueue(self, value):
         self.items.insert(0, value)
 
@@ -35,6 +40,7 @@ custom_queue.enqueue(5)
 custom_queue.enqueue(10)
 custom_queue.enqueue(15)
 custom_queue.enqueue(20)
+print(custom_queue)
 print(custom_queue.dequeue())
 print(custom_queue.dequeue())
 print(custom_queue.peek())
