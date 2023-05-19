@@ -1,27 +1,27 @@
 class Queue():
     def __init__(self):
-        self.queue = []
+        self.items = []
 
     def enqueue(self, value):
-        self.queue.insert(0, value)
+        self.items.insert(0, value)
 
     def is_empty(self):
-        if len(self.queue):
+        if len(self.items):
             return False
         return True
 
     def dequeue(self):
         if self.is_empty():
             return "no values in queue"
-        return self.queue.pop()
+        return self.items.pop()
 
     def peek(self):
         if self.is_empty():
             return "no values in queue"
-        return self.queue[-1]
+        return self.items[-1]
 
     def delete(self):
-        self.queue = []
+        self.items = []
 
 
 # first in first out structure
@@ -35,12 +35,12 @@ custom_queue.enqueue(5)
 custom_queue.enqueue(10)
 custom_queue.enqueue(15)
 custom_queue.enqueue(20)
-# print(custom_queue.dequeue())
-# print(custom_queue.dequeue())
-# print(custom_queue.peek())
-# print(custom_queue.dequeue())
-# print(custom_queue.dequeue())
-# print(custom_queue.dequeue())
-# print(custom_queue.dequeue())
+print(custom_queue.dequeue())
+print(custom_queue.dequeue())
+print(custom_queue.peek())
+print(custom_queue.dequeue())
+print(custom_queue.dequeue())
+print(custom_queue.dequeue())
+print(custom_queue.dequeue())
 custom_queue.delete()
 print(custom_queue.peek())
