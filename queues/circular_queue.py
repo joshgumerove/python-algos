@@ -82,14 +82,18 @@ print(custom_queue.is_full())
 print(custom_queue.is_empty())
 
 print(custom_queue.dequeue())
+print(custom_queue.dequeue())
+
 print(custom_queue)
 print("***")
 print(custom_queue.is_full())
 print(custom_queue.enqueue(900))
 print(custom_queue)
 print(custom_queue.peek())
-custom_queue.delete()
+# custom_queue.delete()
 print(custom_queue)
+print(custom_queue.top, "top")
+print(custom_queue.start, "start")
 
 # uses fixed capacity
 # note how elements are ignored when enqueueing and dequeueing
