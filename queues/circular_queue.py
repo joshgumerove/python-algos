@@ -23,9 +23,32 @@ class Queue():
         else:
             return False
 
+    def enqueue(self, value):
+        if self.is_full():
+            return "the queue is already full"
+        else:
+            if (self.top + 1) == self.maxSize:  # points to the last element therefore update to zero
+                self.top = 0
+            else:
+                self.top += 1
+                if self.start == -1:
+                    self.start = 0
+                self.items[self.top] = value
+                return "the element is inserted at the end of the queue"
+
 
 custom_queue = Queue(5)
 print(custom_queue)
+print(custom_queue.is_full())
+print(custom_queue.is_empty())
+
+custom_queue.enqueue(10)
+custom_queue.enqueue(9)
+custom_queue.enqueue(8)
+
+print(custom_queue)
+print(custom_queue.top, "is the top")
+print(custom_queue.start, "is the start")
 print(custom_queue.is_full())
 print(custom_queue.is_empty())
 
