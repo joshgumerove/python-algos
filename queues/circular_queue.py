@@ -33,8 +33,8 @@ class Queue():
                 self.top += 1
                 if self.start == -1:
                     self.start = 0
-                self.items[self.top] = value
-                return "the element is inserted at the end of the queue"
+            self.items[self.top] = value
+            return "the element is inserted at the end of the queue"
 
     def dequeue(self):
         if self.is_empty():
