@@ -58,6 +58,11 @@ class Queue():
             return "there is no element in the queue"
         return self.items[self.start]
 
+    def delete(self):
+        self.items = self.maxSize * [None]
+        self.start = -1
+        self.top = -1
+
 
 custom_queue = Queue(5)
 print(custom_queue)
@@ -83,6 +88,8 @@ print(custom_queue.is_full())
 print(custom_queue.enqueue(900))
 print(custom_queue)
 print(custom_queue.peek())
+custom_queue.delete()
+print(custom_queue)
 
 # uses fixed capacity
 # note how elements are ignored when enqueueing and dequeueing
