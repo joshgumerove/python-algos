@@ -17,10 +17,17 @@ class Queue():
         else:
             return False
 
+    def is_empty(self):
+        if self.top == -1:
+            return True
+        else:
+            return False
 
-first_queue = Queue(5)
-print(first_queue)
-print(first_queue.is_full())
+
+custom_queue = Queue(5)
+print(custom_queue)
+print(custom_queue.is_full())
+print(custom_queue.is_empty())
 
 # uses fixed capacity
 # note how elements are ignored when enqueueing and dequeueing
