@@ -23,6 +23,10 @@ class Queue():
     def __init__(self):
         self.linked_list = LinkedList()
 
+    def __str__(self):
+        values = [str(node.value) for node in self.linked_list]
+        return " ".join(values)
+
     def is_empty(self):
         if self.linked_list.head is None:
             return True
@@ -62,8 +66,4 @@ print(queue.dequeue())
 print(queue.peek())
 print(queue.is_empty())
 
-# print(queue.dequeue())
-# print(queue.dequeue())
-# print(queue.dequeue())
-# print(queue.dequeue())
-print([node.value for node in queue.linked_list])
+print(queue)
