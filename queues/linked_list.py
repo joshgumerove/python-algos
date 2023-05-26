@@ -12,6 +12,12 @@ class LinkedList():
         self.head = None
         self.tail = None
 
+    def __iter__(self):
+        current_node = self.head
+        while current_node:
+            yield current_node
+            current_node = current_node.next
+
     def is_empty(self):
         if self.head is None:
             return True
@@ -55,7 +61,8 @@ print(queue.head.value)
 print(queue.peek())
 print(queue.is_empty())
 
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
+# print(queue.dequeue())
+# print(queue.dequeue())
+# print(queue.dequeue())
+# print(queue.dequeue())
+print([node.value for node in queue])
