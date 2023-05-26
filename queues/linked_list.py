@@ -34,6 +34,10 @@ class LinkedList():
     def peek(self):
         return self.head.value
 
+    def delete(self):
+        self.head = None
+        self.tail = None
+
 
 queue = LinkedList()
 queue.enqueue(10)
