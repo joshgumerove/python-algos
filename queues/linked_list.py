@@ -24,7 +24,7 @@ class Queue():
         self.linked_list = LinkedList()
 
     def __str__(self):
-        values = [str(node.value) for node in self.linked_list]
+        values = [str(node) for node in self.linked_list]
         return " ".join(values)
 
     def is_empty(self):
@@ -45,9 +45,9 @@ class Queue():
     def dequeue(self):
         if self.is_empty():
             return "no values to remove"
-        removed_value = self.linked_list.head.value
+        remove_value = self.linked_list.head.value
         self.linked_list.head = self.linked_list.head.next
-        return removed_value
+        return remove_value
 
     def peek(self):
         return self.linked_list.head.value
@@ -62,8 +62,10 @@ queue.enqueue(10)
 queue.enqueue(15)
 queue.enqueue(20)
 
-print(queue.dequeue())
 print(queue.peek())
 print(queue.is_empty())
+print(queue)
 
+
+queue.dequeue()
 print(queue)
