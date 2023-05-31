@@ -57,9 +57,6 @@ class Queue():
             self.linked_list.head = self.linked_list.head.next
             return temporary_val
 
-        self.linked_list.head = self.linked_list.head.next
-        return temporary_val
-
     def peek(self):
         if self.linked_list.head is not None:
             return self.linked_list.head.value
