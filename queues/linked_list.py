@@ -61,7 +61,10 @@ class Queue():
         return temporary_val
 
     def peek(self):
-        return self.linked_list.head.value
+        if self.linked_list.head is not None:
+            return self.linked_list.head.value
+        else:
+            return "no elements in the queue"
 
     def delete(self):
         self.linked_list.head = None
@@ -80,3 +83,7 @@ print(queue)
 
 queue.dequeue()
 print(queue)
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
