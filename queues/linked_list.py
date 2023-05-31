@@ -45,9 +45,20 @@ class Queue():
     def dequeue(self):
         if self.is_empty():
             return "no values to remove"
-        remove_value = self.linked_list.head.value
+
+        temporary_val = self.linked_list.head
+
+        if self.linked_list.head == self.linked_list.tail:
+            self.linked_list.head = None
+            self.linked_list.tail = None
+            return temporary_val
+
+        else:
+            self.linked_list.head = self.linked_list.head.next
+            return temporary_val
+
         self.linked_list.head = self.linked_list.head.next
-        return remove_value
+        return temporary_val
 
     def peek(self):
         return self.linked_list.head.value
