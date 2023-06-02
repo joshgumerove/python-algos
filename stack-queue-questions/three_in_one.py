@@ -40,3 +40,22 @@ class MultiStack():
             self.custom_list[self.index_of_top(stackNum)] = 0
             self.sizes[stackNum] -= 1
             return temporary_top
+
+    def peek(self, stackNum):
+        if self.is_empty(stackNum):
+            return "The stack is empty"
+        else:
+            value = self.custom_list[self.index_of_top(stackNum)]
+            return value
+
+
+custom_stack = MultiStack(6)
+print(custom_stack.is_full(0))
+print(custom_stack.is_empty(1))
+custom_stack.push(1, 0)
+custom_stack.push(2, 0)
+custom_stack.push(3, 2)
+print(custom_stack.peek(1))
+custom_stack.push(100, 1)
+print(custom_stack.peek(1))
+print(custom_stack.is_full(1))
