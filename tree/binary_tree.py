@@ -42,5 +42,17 @@ print("*****************************************")
 in_order_traversal(new_bt)
 
 
+def post_order_traversal(root_node):
+    if not root_node:
+        return
+    post_order_traversal(root_node.left_child)
+    post_order_traversal(root_node.right_child)
+    print(root_node.data)
+
+
+print("*****************************************")
+post_order_traversal(new_bt)
+
 # each node has at most two children
 # different kinds of binary trees
+# note the different ways to traverse a binary tree
