@@ -30,5 +30,17 @@ def pre_order_traversal(root_node):
 pre_order_traversal(new_bt)
 
 
+def in_order_traversal(root_node):
+    if not root_node:
+        return
+    in_order_traversal(root_node.left_child)
+    print(root_node.data)
+    in_order_traversal(root_node.right_child)
+
+
+print("*****************************************")
+in_order_traversal(new_bt)
+
+
 # each node has at most two children
 # different kinds of binary trees
