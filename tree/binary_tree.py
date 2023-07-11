@@ -143,3 +143,24 @@ def level_order_traversal(root_node):  # go level by level
 
 
 level_order_traversal(new_bt)
+
+
+def search_bt(root_node, node_value):
+    if not root_node:
+        return "The Binary Tree does not exist"
+    else:
+        custom_queue = Queue()
+        custom_queue.enqueue(root_node)
+        while not custom_queue.is_empty():
+            root = custom_queue.dequeue()
+            if root.value.data == node_value:
+                return True
+            if root.value.left_child is not None:
+                custom_queue.enqueue(root.value.left_child)
+            if root.value.right_child is not None:
+                custom_queue.enqueue(root.value.right_child)
+    return "Not Found"
+
+
+print(search_bt(new_bt, "This should return not found"))
+print(search_bt(new_bt, "Tea"))
