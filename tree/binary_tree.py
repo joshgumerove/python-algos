@@ -164,3 +164,29 @@ def search_bt(root_node, node_value):
 
 print(search_bt(new_bt, "This should return not found"))
 print(search_bt(new_bt, "Tea"))
+
+
+def insert_node(root_node, new_node):
+    if not root_node:
+        root_node = new_node
+        return root_node
+
+    custom_queue = Queue()
+    custom_queue.enqueue(root_node)
+    while not custom_queue.is_empty():
+        root = custom_queue.dequeue()
+        if root.value.left_child is not None:
+            custom_queue.enqueue(root.value.left_child)
+        else:
+            root.value.left_child = new_node
+            return "successfully inserted left child"
+        if root.value.right_child is not None:
+            custom_queue.enqueue(root.value.right_child)
+        else:
+            root.value.right_child = new_node
+            return "successfully inserted right child"
+
+
+new_node = TreeNode("Cola")
+print(insert_node(new_bt, new_node))
+level_order_traversal(new_bt)
