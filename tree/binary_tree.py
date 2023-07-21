@@ -268,3 +268,15 @@ def delete_node_BT(root_node, node):
 print("[delete_node_BT]")
 delete_node_BT(new_bt, "Hot")
 level_order_traversal(new_bt)
+
+
+def delete_BT(root_node):
+    root_node.data = None
+    root_node.left_child = None
+    root_node.right_child = None
+    return "The binary tree has been deleted"
+
+
+print("[delete_BT]")
+delete_BT(new_bt)
+level_order_traversal(new_bt)
