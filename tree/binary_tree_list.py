@@ -17,12 +17,24 @@ class BinaryTree():
                 return "Success"
         return "Not found"
 
+    def pre_order_traversal(self, index):
+        if index > self.last_used_idx:
+            return
+        print(self.custom_list[index])
+        self.pre_order_traversal(index * 2)
+        self.pre_order_traversal(index * 2 + 1)
+
 
 b1 = BinaryTree(8)
 b1.insert_node("Drinks")
 b1.insert_node("Hot")
 b1.insert_node('Cold')
+b1.insert_node('Tea')
+b1.insert_node('Coffee')
 
 print(b1.custom_list)
 print(b1.search_node("Hot"))
 print(b1.search_node("Smoothie"))
+
+print("*****pre_order_traversal*****")
+b1.pre_order_traversal(1)
