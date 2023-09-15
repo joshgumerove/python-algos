@@ -52,6 +52,11 @@ class BinaryTree():
                 self.last_used_idx -= 1
                 return "Node successfully deleted"
 
+    def delete_BT(self):
+        self.custom_list = None
+        self.last_used_idx = 0  # lecturer forgot to clear this value
+        return "Binary Tree has been successfully deleted"
+
 
 b1 = BinaryTree(8)
 b1.insert_node("Drinks")
@@ -67,16 +72,25 @@ print(b1.search_node("Smoothie"))
 
 print("*****pre_order_traversal*****")
 b1.pre_order_traversal(1)
+
 print("*****in_order_traversal*****")
 b1.in_order_traversal(1)
+
 print("********post_order_traversal*******")
 b1.post_order_traversal(1)
+
 print('******level_order_traversal*******')
 b1.level_order_traversal(1)
+
 print('****delete_node****')
 print(b1.custom_list)
 print(b1.last_used_idx)
 print("DELETE RESULT")
 print(b1.delete_node("Hot"))
+print(b1.custom_list)
+print(b1.last_used_idx)
+
+print('****delete_BT****')
+b1.delete_BT()
 print(b1.custom_list)
 print(b1.last_used_idx)
