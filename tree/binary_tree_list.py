@@ -42,6 +42,16 @@ class BinaryTree():
         for i in range(index, self.last_used_idx + 1):
             print(self.custom_list[i])
 
+    def delete_node(self, value):
+        if self.last_used_idx == 0:
+            return 'There is not a node to delete'
+        for i in range(1, self.last_used_idx + 1):
+            if self.custom_list[i] == value:
+                self.custom_list[i] = self.custom_list[self.last_used_idx]
+                self.custom_list[self.last_used_idx] = None
+                self.last_used_idx -= 1
+                return "Node successfully deleted"
+
 
 b1 = BinaryTree(8)
 b1.insert_node("Drinks")
@@ -63,3 +73,10 @@ print("********post_order_traversal*******")
 b1.post_order_traversal(1)
 print('******level_order_traversal*******')
 b1.level_order_traversal(1)
+print('****delete_node****')
+print(b1.custom_list)
+print(b1.last_used_idx)
+print("DELETE RESULT")
+print(b1.delete_node("Hot"))
+print(b1.custom_list)
+print(b1.last_used_idx)
