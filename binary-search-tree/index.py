@@ -21,9 +21,27 @@ def insert_node(rootNode, value):
     return "The node has been successfully inserted"
 
 
+def pre_order_traversal(rootNode):
+    if not rootNode:
+        return
+    print(rootNode.data)
+    pre_order_traversal(rootNode.left_child)
+    pre_order_traversal(rootNode.right_child)
+
+
 new_BST = BSTNode(None)
 
-insert_node(new_BST, 10)
-insert_node(new_BST, 7)
+insert_node(new_BST, 70)
+insert_node(new_BST, 50)
+insert_node(new_BST, 90)
+insert_node(new_BST, 30)
+insert_node(new_BST, 60)
+insert_node(new_BST, 80)
+insert_node(new_BST, 100)
+insert_node(new_BST, 20)
+insert_node(new_BST, 40)
+
 print(new_BST.data)
 print(new_BST.left_child.data)
+print('***pre-order-traversal***')
+pre_order_traversal(new_BST)
