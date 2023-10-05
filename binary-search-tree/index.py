@@ -29,6 +29,14 @@ def pre_order_traversal(rootNode):
     pre_order_traversal(rootNode.right_child)
 
 
+def in_order_traversal(rootNode):
+    if not rootNode:
+        return
+    in_order_traversal(rootNode.left_child)
+    print(rootNode.data)
+    in_order_traversal(rootNode.right_child)
+
+
 new_BST = BSTNode(None)
 
 insert_node(new_BST, 70)
@@ -43,5 +51,9 @@ insert_node(new_BST, 40)
 
 print(new_BST.data)
 print(new_BST.left_child.data)
+
 print('***pre-order-traversal***')
 pre_order_traversal(new_BST)
+
+print('***in-order-traversal***')
+in_order_traversal(new_BST)
