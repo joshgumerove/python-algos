@@ -45,6 +45,22 @@ def post_order_traversal(rootNode):
     print(rootNode.data)
 
 
+def search_node(rootNode, nodeValue):
+    if rootNode.data == nodeValue:
+        print(f"the value is found: {nodeValue}")
+    elif nodeValue < rootNode.data:
+        if rootNode.left_child.data == nodeValue:
+            print(f"the value is found: {nodeValue}")
+        else:
+            search_node(rootNode.left_child, nodeValue)
+
+    else:
+        if rootNode.right_child.data == nodeValue:
+            print(f"the value is found: {nodeValue}")
+        else:
+            search_node(rootNode.right_child, nodeValue)
+
+
 new_BST = BSTNode(None)
 
 insert_node(new_BST, 70)
@@ -68,3 +84,5 @@ in_order_traversal(new_BST)
 
 print('***post-order-traversal***')
 post_order_traversal(new_BST)
+
+search_node(new_BST, 60)
