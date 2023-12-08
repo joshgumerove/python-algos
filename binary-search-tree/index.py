@@ -61,6 +61,35 @@ def search_node(rootNode, nodeValue):
             search_node(rootNode.right_child, nodeValue)
 
 
+def min_value_node(bstNode):
+    current = bstNode
+    while current.left_child is not None:
+        current = current.left_child
+    return current
+
+
+def delete_node(rootNode, nodeValue):
+    if rootNode is None:
+        return rootNode
+    if nodeValue < rootNode.data:
+        rootNode.left_child = delete_node(rootNode.left_child, nodeValue)
+    elif nodeValue > rootNode.data:
+        rootNode.right_child = delete_node(rootNode.right_child, nodeValue)
+    else:
+        if rootNode.left_child is None:
+            temp = rootNode.right_child
+            rootNode = None
+            return temp
+        if rootNode.right_child is None:
+            temp = rootNode.left_child
+            rootNode = None
+            return temp
+        temp = min_value_node(rootNode.right_child)
+        rootNode.data = temp.data
+        rootNode.right_child = delete_node(rootNode.right_child, temp.data)
+    return rootNode
+
+
 new_BST = BSTNode(None)
 
 insert_node(new_BST, 70)
@@ -86,3 +115,8 @@ print('***post-order-traversal***')
 post_order_traversal(new_BST)
 
 search_node(new_BST, 60)
+
+print("***DELETE_NODE")
+delete_node(new_BST, 80)
+delete_node(new_BST, 90)
+in_order_traversal(new_BST)
