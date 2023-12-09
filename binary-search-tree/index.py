@@ -90,6 +90,13 @@ def delete_node(rootNode, nodeValue):
     return rootNode
 
 
+def delete_BST(rootNode):
+    rootNode.data = None
+    rootNode.left_child = None
+    rootNode.right_child = None
+    return "BST has been successfully deleted"
+
+
 new_BST = BSTNode(None)
 
 insert_node(new_BST, 70)
@@ -120,3 +127,7 @@ print("***DELETE_NODE")
 delete_node(new_BST, 80)
 delete_node(new_BST, 90)
 in_order_traversal(new_BST)
+
+print("deleting BST")
+print(delete_BST(new_BST))
+print(new_BST.left_child)
