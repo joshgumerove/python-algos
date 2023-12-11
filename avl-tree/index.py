@@ -1,4 +1,4 @@
-from queues import LinkedList
+from queues import LinkedList as Queue
 
 
 class AVLNode:
@@ -35,6 +35,3 @@ def post_order_traversal(rootNode):
 
 new_AVL = AVLNode(10)
 print(new_AVL.data)
-
-test = LinkedList()
-print(test)
