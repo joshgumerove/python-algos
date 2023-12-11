@@ -47,5 +47,21 @@ def level_order_traversal(root_node):  # go level by level
             custom_queue.enqueue(root.value.right_child)
 
 
+def search_node(rootNode, nodeValue):
+    if rootNode.data == nodeValue:
+        print(f"the value is found: {nodeValue}")
+    elif nodeValue < rootNode.data:
+        if rootNode.left_child.data == nodeValue:
+            print(f"the value is found: {nodeValue}")
+        else:
+            search_node(rootNode.left_child, nodeValue)
+
+    else:
+        if rootNode.right_child.data == nodeValue:
+            print(f"the value is found: {nodeValue}")
+        else:
+            search_node(rootNode.right_child, nodeValue)
+
+
 new_AVL = AVLNode(10)
 print(new_AVL.data)
