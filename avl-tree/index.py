@@ -33,5 +33,19 @@ def post_order_traversal(rootNode):
     print(rootNode.data)
 
 
+def level_order_traversal(root_node):  # go level by level
+    if not root_node:
+        return
+    custom_queue = Queue()
+    custom_queue.enqueue(root_node)
+    while not custom_queue.is_empty():
+        root = custom_queue.dequeue()
+        print(root.value.data)
+        if root.value.left_child is not None:
+            custom_queue.enqueue(root.value.left_child)
+        if root.value.right_child is not None:
+            custom_queue.enqueue(root.value.right_child)
+
+
 new_AVL = AVLNode(10)
 print(new_AVL.data)
