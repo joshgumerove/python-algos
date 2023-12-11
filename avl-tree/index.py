@@ -6,5 +6,5 @@ class AVLNode:
         self.height = 1  # need height property to determine if AVL is balanced
 
 
-new_AVL = AVLNode()
-print(new_AVL)
+new_AVL = AVLNode(10)
+print(new_AVL.data)
