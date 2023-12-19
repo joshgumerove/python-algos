@@ -1,4 +1,4 @@
-from queues import LinkedList as Queue
+from queues import Queue
 
 
 class AVLNode:
@@ -121,6 +121,8 @@ def insert_node(rootNode, nodeValue):
     return rootNode
 
 
-new_AVL = AVLNode(10)
-print(new_AVL.data)
-print(get_height(new_AVL))
+new_AVL = AVLNode(5)
+new_AVL = insert_node(new_AVL, 10)
+new_AVL = insert_node(new_AVL, 15)
+new_AVL = insert_node(new_AVL, 20)
+level_order_traversal(new_AVL)
