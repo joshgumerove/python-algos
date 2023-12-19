@@ -91,6 +91,12 @@ def left_rotate(disbalancedNode):
     return new_root
 
 
+def get_balance(rootNode):
+    if not rootNode:
+        return 0
+    return get_height(rootNode.left_child) - get_height(rootNode.right_child)
+
+
 new_AVL = AVLNode(10)
 print(new_AVL.data)
 print(get_height(new_AVL))
