@@ -97,6 +97,30 @@ def get_balance(rootNode):
     return get_height(rootNode.left_child) - get_height(rootNode.right_child)
 
 
+def insert_node(rootNode, nodeValue):
+    if not rootNode:
+        return AVLNode(nodeValue)
+    elif nodeValue < rootNode.data:
+        rootNode.left_child = insert_node(rootNode.left_child, nodeValue)
+    else:
+        rootNode.right_child = insert_node(rootNode.right_child, nodeValue)
+
+    rootNode.height = 1 + max(get_height(rootNode.left_child),
+                              get_height(rootNode.right_child))
+    balance = get_balance(rootNode)
+    if balance > 1 and nodeValue < rootNode.left_child.data:
+        return right_rotate(rootNode)
+    if balance > 1 and nodeValue > rootNode.left_child.data:
+        rootNode.left_child = left_rotate(rootNode.left_child)
+        return right_rotate(rootNode)
+    if balance < -1 and nodeValue > rootNode.right_child.data:
+        return left_rotate(rootNode)
+    if balance < -1 and nodeValue < rootNode.right_child.data:
+        rootNode.right_child = right_rotate(rootNode.right_child)
+        left_rotate(rootNode)
+    return rootNode
+
+
 new_AVL = AVLNode(10)
 print(new_AVL.data)
 print(get_height(new_AVL))
