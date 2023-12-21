@@ -121,6 +121,12 @@ def insert_node(rootNode, nodeValue):
     return rootNode
 
 
+def get_min_value_node(rootNode):
+    if rootNode is None or rootNode.left_child is None:
+        return rootNode
+    return get_min_value_node(rootNode.left_child)
+
+
 new_AVL = AVLNode(5)
 new_AVL = insert_node(new_AVL, 10)
 new_AVL = insert_node(new_AVL, 15)
