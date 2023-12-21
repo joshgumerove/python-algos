@@ -127,8 +127,42 @@ def get_min_value_node(rootNode):
     return get_min_value_node(rootNode.left_child)
 
 
+def delete_node(rootNode, nodeValue):
+    if not rootNode:
+        return rootNode
+    elif nodeValue < rootNode.data:
+        rootNode.left_child = delete_node(rootNode.left_child, nodeValue)
+    elif nodeValue > rootNode.data:
+        rootNode.right_child = delete_node(rootNode.right_child, nodeValue)
+    else:
+        if rootNode.left_child is None:
+            temp = rootNode.right_child
+            rootNode = None
+            return temp
+        elif rootNode.right_child is None:
+            temp = rootNode.left_child
+            rootNode = None
+            return temp
+        temp = get_min_value_node(rootNode.right_child)
+        rootNode.data = temp.data
+        rootNode.right_child = delete_node(rootNode.right_child, temp.data)
+    balance = get_balance(rootNode)
+    if balance > 1 and get_balance(rootNode.left_child) >= 0:
+        return right_rotate(rootNode)
+    if balance < -1 and get_balance(rootNode.right_child) <= 0:
+        return left_rotate(rootNode)
+    if balance > 1 and get_balance(rootNode.left_child) < 0:
+        rootNode.left_child = left_rotate(rootNode.left_child)
+        return right_rotate(rootNode)
+    if balance < -1 and get_balance(rootNode.right_child):
+        rootNode.right_child = right_rotate(rootNode.right_child)
+        return left_rotate(rootNode)
+    return rootNode
+
+
 new_AVL = AVLNode(5)
 new_AVL = insert_node(new_AVL, 10)
 new_AVL = insert_node(new_AVL, 15)
 new_AVL = insert_node(new_AVL, 20)
+new_AVL = delete_node(new_AVL, 15)
 level_order_traversal(new_AVL)
