@@ -160,9 +160,19 @@ def delete_node(rootNode, nodeValue):
     return rootNode
 
 
+def delete_AVL(rootNode):
+    rootNode.data = None
+    rootNode.left_child = None
+    rootNode.right_child = None
+    return "AVL deleted"
+
+
 new_AVL = AVLNode(5)
 new_AVL = insert_node(new_AVL, 10)
 new_AVL = insert_node(new_AVL, 15)
 new_AVL = insert_node(new_AVL, 20)
 new_AVL = delete_node(new_AVL, 15)
+level_order_traversal(new_AVL)
+delete_AVL(new_AVL)
+
 level_order_traversal(new_AVL)
