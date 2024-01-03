@@ -45,6 +45,15 @@ def heapify_tree_insert(rootNode, index, heapType):
         heapify_tree_insert(rootNode, parent_index, heapType)
 
 
+def insert_node(rootNode, nodeValue, heapType):
+    if rootNode.heap_size + 1 == rootNode.max_size:
+        return "Binary Heap is full"
+    rootNode.custom_list[rootNode.heap_size + 1] = nodeValue
+    rootNode.heap_size += 1
+    heapify_tree_insert(rootNode, rootNode.heap_size, heapType)
+    return "value successfully inserted"
+
+
 new_heap = Heap(5)
 
 print(new_heap.custom_list)
@@ -52,4 +61,10 @@ print(peek_of_heap(new_heap))
 print(size_of_heap(new_heap))
 
 print("**traversal**")
-print(level_order_traversal(new_heap))
+level_order_traversal(new_heap)
+
+insert_node(new_heap, 5, "Min")
+insert_node(new_heap, 1, "Min")
+
+print("**traversal**")
+level_order_traversal(new_heap)
