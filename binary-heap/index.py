@@ -27,6 +27,18 @@ def level_order_traversal(rootNode):
             print(rootNode.custom_list[i])
 
 
+def heapify_tree_insert(rootNode, index, heapType):
+    parent_index = int(index/2)
+    if index <= 1:
+        return
+    if heapType == "Min":
+        if rootNode.custom_list[index] < rootNode.custom_list[parent_index]:
+            temp = rootNode.custom_list[index]
+            rootNode.custom_list[index] = rootNode.custom_list[parent_index]
+            rootNode.custom_list[parent_index] = temp
+        heapify_tree_insert(rootNode, parent_index, heapType)
+
+
 new_heap = Heap(5)
 
 print(new_heap.custom_list)
