@@ -54,6 +54,48 @@ def insert_node(rootNode, nodeValue, heapType):
     return "value successfully inserted"
 
 
+def heapify_tree_extract(rootNode, index, heapType):
+    left_index = index * 2
+    right_index = index * 2 + 1
+    swap_child = 0
+
+    if rootNode.heap_size < left_index:
+        return
+    elif rootNode.heap_size == left_index:
+        if heapType == "Min":
+            if rootNode.custom_list[index] > rootNode.custom_list[left_index]:
+                temp = rootNode.custom_list[index]
+                rootNode.custom_list[index] = rootNode.custom_list[left_index]
+                rootNode.custom_list[left_index] = temp
+            return
+        else:
+            if rootNode.custom_list[index] < rootNode.custom_list[left_index]:
+                temp = rootNode.custom_list[index]
+                rootNode.custom_list[index] = rootNode.custom_list[left_index]
+                rootNode.custom_list[left_index] = temp
+            return
+    else:
+        if heapType == "Min":
+            if rootNode.custom_list[left_index] < rootNode.custom_list[right_index]:
+                swap_child = left_index
+            else:
+                swap_child = right_index
+            if rootNode.custom_list[index] > rootNode.custom_list[swap_child]:
+                temp = rootNode.custom_list[index]
+                rootNode.custom_list[index] = rootNode.custom_list[swap_child]
+                rootNode.custom_list[swap_child] = temp
+        else:
+            if rootNode.custom_list[left_index] > rootNode.custom_list[right_index]:
+                swap_child = left_index
+            else:
+                swap_child = right_index
+            if rootNode.custom_list[index] < rootNode.custom_list[swap_child]:
+                temp = rootNode.custom_list[index]
+                rootNode.custom_list[index] = rootNode.custom_list[swap_child]
+                rootNode.custom_list[swap_child] = temp
+        heapify_tree_extract(rootNode, swap_child, heapType)
+
+
 new_heap = Heap(5)
 
 print(new_heap.custom_list)
