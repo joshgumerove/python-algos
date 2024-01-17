@@ -96,17 +96,36 @@ def heapify_tree_extract(rootNode, index, heapType):
         heapify_tree_extract(rootNode, swap_child, heapType)
 
 
+def extract_node(rootNode, heapType):
+    if rootNode.heap_size == 0:
+        return
+    else:
+        extracted_node = rootNode.custom_list[1]
+        rootNode.custom_list[1] = rootNode.custom_list[rootNode.heap_size]
+        rootNode.custom_list[rootNode.heap_size] = None
+        rootNode.heap_size -= 1
+        heapify_tree_extract(rootNode, 1, heapType)
+        return extracted_node
+
+
 new_heap = Heap(5)
-
-print(new_heap.custom_list)
-print(peek_of_heap(new_heap))
-print(size_of_heap(new_heap))
-
-print("**traversal**")
+insert_node(new_heap, 4, "Max")
+insert_node(new_heap, 5, "Max")
+insert_node(new_heap, 2, "Max")
+insert_node(new_heap, 1, "Max")
+print(extract_node(new_heap, "Max"))
+print("**level order traverse**")
 level_order_traversal(new_heap)
 
-insert_node(new_heap, 5, "Min")
-insert_node(new_heap, 1, "Min")
+# print(new_heap.custom_list)
+# print(peek_of_heap(new_heap))
+# print(size_of_heap(new_heap))
 
-print("**traversal**")
-level_order_traversal(new_heap)
+# print("**traversal**")
+# level_order_traversal(new_heap)
+
+# insert_node(new_heap, 5, "Min")
+# insert_node(new_heap, 1, "Min")
+
+# print("**traversal**")
+# level_order_traversal(new_heap)
