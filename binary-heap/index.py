@@ -108,6 +108,10 @@ def extract_node(rootNode, heapType):
         return extracted_node
 
 
+def delete_binary_heap(rootNode):
+    rootNode.custom_list = None
+
+
 new_heap = Heap(5)
 insert_node(new_heap, 4, "Max")
 insert_node(new_heap, 5, "Max")
@@ -116,6 +120,9 @@ insert_node(new_heap, 1, "Max")
 print(extract_node(new_heap, "Max"))
 print("**level order traverse**")
 level_order_traversal(new_heap)
+
+delete_binary_heap(new_heap)
+print(new_heap.custom_list)
 
 # print(new_heap.custom_list)
 # print(peek_of_heap(new_heap))
