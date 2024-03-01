@@ -14,6 +14,8 @@ def insertion_sort(customList):
 
 def bucket_sort(customList):
     number_of_buckets = round(math.sqrt(len(customList)))
+    max_value = max(customList)
+    print(max_value)
 
 
 list1 = [2, 1, 7, 6, 5, 3, 4, 8]
