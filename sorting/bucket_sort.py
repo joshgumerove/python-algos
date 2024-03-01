@@ -28,10 +28,13 @@ def bucket_sort(customList):
     k = 0
     for i in range(number_of_buckets):
         for j in range(len(arr[i])):
-            print(customList)
+            customList[k] = arr[i][j]
             k += 1
     return customList
 
 
 list1 = [2, 1, 7, 6, 5, 3, 4, 8]
-bucket_sort(list1)
+list2 = [1, 2, 4, 91, 93, 95]
+
+print(bucket_sort(list1))
+print(bucket_sort(list2))
