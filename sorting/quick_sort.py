@@ -12,11 +12,22 @@ def pivot(my_list, pivot_index, end_index):
     return swap_index
 
 
+def quick_sort(my_list, left, right):
+    if left < right:
+        pivot_index = pivot(my_list, left, right)
+        quick_sort(my_list, left, pivot_index - 1)
+        quick_sort(my_list, pivot_index + 1, right)
+    return my_list
+
+
 list_1 = [3, 5, 0, 6, 2, 1, 4]
-print(pivot(list_1, 0, len(list_1) - 1))
-print(list_1)
+
+# print(pivot(list_1, 0, len(list_1) - 1))
+# print(list_1)
 
 # [3, 0, 5, 6, 2, 1, 4] 1
 # [3, 0, 2, 6, 5, 1, 4] 2
 # [3, 0, 2, 1, 5, 6, 4] 3
 # [1, 0, 2, 3, 5, 6, 4] 3 last swap
+
+print(quick_sort(list_1, 0, len(list_1) - 1))
