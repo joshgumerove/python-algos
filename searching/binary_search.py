@@ -6,14 +6,16 @@ def binary_search(arr, val):
     end = len(arr) - 1
     middle = math.floor((start + end) / 2)
 
-    while arr[middle] != val and end >= 0:
+    while arr[middle] != val and start <= end:
         if val < arr[middle]:
             end = middle - 1
         else:
             start = middle + 1
         middle = math.floor((start + end) / 2)
         print(start, middle, end)
-    return middle
+    if arr[middle] == val:
+        return middle
+    return -1
 
 # better performacne than linear search (if list is sorted already)
 # only works with sorted lists (limitation)
