@@ -1,8 +1,8 @@
 def linear_search(my_list, target):
     for i in range(0, len(my_list)):
         if my_list[i] == target:
-            return True
-    return False
+            return i
+    return -1
 
 
 list1 = [2, 4, 6, 8]
