@@ -30,8 +30,10 @@ class Graph():
 custom_graph = Graph()
 custom_graph.add_vertex("A")
 custom_graph.add_vertex("B")
+custom_graph.add_vertex("C")
 
 custom_graph.add_edge("A", "B")
+custom_graph.add_edge("B", "C")
 custom_graph.print_graph()
 
 custom_graph.remove_edge("A", "B")
