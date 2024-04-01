@@ -19,11 +19,20 @@ class Graph():
             return True
         return False
 
+    def remove_edge(self, vertex1, vertex2):
+        if vertex2 in self.adjacency_list[vertex1] and vertex1 in self.adjacency_list[vertex2]:
+            self.adjacency_list[vertex1].remove(vertex2)
+            self.adjacency_list[vertex2].remove(vertex1)
+            return True
+        return False
+
 
 custom_graph = Graph()
 custom_graph.add_vertex("A")
 custom_graph.add_vertex("B")
 
 custom_graph.add_edge("A", "B")
+custom_graph.print_graph()
 
+custom_graph.remove_edge("A", "B")
 custom_graph.print_graph()
