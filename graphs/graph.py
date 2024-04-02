@@ -44,5 +44,9 @@ custom_graph.add_edge("A", "B")
 custom_graph.add_edge("B", "C")
 custom_graph.print_graph()
 
-custom_graph.remove_edge("A", "B")
+# custom_graph.remove_edge("A", "B")
+# custom_graph.print_graph()
+
+print("\n vertext removed \n")
+custom_graph.remove_vertex("C")
 custom_graph.print_graph()
