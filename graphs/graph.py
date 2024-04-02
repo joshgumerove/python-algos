@@ -26,6 +26,14 @@ class Graph():
             return True
         return False
 
+    def remove_vertex(self, vertex):
+        if vertex in self.adjacency_list.keys():
+            for other_vertex in self.adjacency_list[vertex]:
+                self.adjacency_list[other_vertex].remove(vertex)
+            del self.adjacency_list[vertex]
+            return True
+        return False
+
 
 custom_graph = Graph()
 custom_graph.add_vertex("A")
