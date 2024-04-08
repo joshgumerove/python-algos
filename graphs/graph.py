@@ -34,6 +34,19 @@ class Graph():
             return True
         return False
 
+    def bfs(self, vertex):
+        visited = set()
+        visited.add(vertex)
+        queue = [vertex]
+
+        while queue:
+            current_vertex = queue.pop(0)
+            print(current_vertex)
+            for adjacent_vertex in self.adjacency_list[current_vertex]:
+                if adjacent_vertex not in visited:
+                    visited.add(adjacent_vertex)
+                    queue.append(adjacent_vertex)
+
 
 custom_graph = Graph()
 custom_graph.add_vertex("A")
@@ -50,3 +63,20 @@ custom_graph.print_graph()
 print("\n vertext removed \n")
 custom_graph.remove_vertex("C")
 custom_graph.print_graph()
+
+print("\n my_graph below \n")
+
+my_graph = Graph()
+my_graph.add_vertex("A")
+my_graph.add_vertex("B")
+my_graph.add_vertex("C")
+my_graph.add_vertex("D")
+my_graph.add_vertex("E")
+my_graph.add_edge("A", "B")
+my_graph.add_edge("A", "C")
+my_graph.add_edge("B", "E")
+my_graph.add_edge("C", "D")
+my_graph.add_edge("D", "E")
+
+my_graph.print_graph()
+my_graph.bfs("A")
