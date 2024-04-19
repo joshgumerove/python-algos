@@ -1,3 +1,6 @@
+import heapq
+
+
 class Edge():
     def __init__(self, weight, start_vertex, target_vertex):
         self.weight = weight
@@ -19,3 +22,35 @@ class Node():
     def add_edge(self, weight, destination_vertex):
         edge = Edge(weight, self, destination_vertex)
         self.neighbors.append(edge)
+
+
+class Dijkstra():
+    def __init__(self):
+        self.heap = []
+
+    def calculate(self, start_vertex):
+        start_vertex.min_distance = 0
+        heapq.heappushpop(self.heap, start_vertex)
+        while self.heap:
+            # pop element with the lowest distance
+            actual_vertex = heapq.heappop(self.heap)
+            if actual_vertex.visited:
+                continue
+            # consider neighbors
+            for edge in start_vertex.neighbors:
+                start = edge.start_vertex
+                target = edge.target_vertex
+                new_distance = start.min_distance + edge.weight
+                if new_distance < target.min_distance:
+                    target.min_distance = new_distance
+                    target.predecessor = start
+                    # update heap
+                    heapq.heappush(self.heap, target)
+            actual_vertex.visited = True
+
+    def get_shortest_path(self, vertex):
+        print(f"The shortest path to vertex is: {vertex.min_distance}")
+        actual_vertex = vertex
+        while actual_vertex is not None:
+            print(actual_vertex.name, end=" ")
+            actual_vertex = actual_vertex.predecessor
