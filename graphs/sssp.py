@@ -15,3 +15,7 @@ class Node():
 
     def __lt__(self, other_node):
         return self.min_distance < other_node.min_distance
+
+    def add_edge(self, weight, destination_vertex):
+        edge = Edge(weight, self, destination_vertex)
+        self.neighbors.append(edge)
