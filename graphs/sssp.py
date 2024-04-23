@@ -93,4 +93,4 @@ node_h.add_edge(14, node_g)
 
 algorithm = Dijkstra()
 algorithm.calculate(node_a)
-algorithm.get_shortest_path(node_b)
+algorithm.get_shortest_path(node_f)
