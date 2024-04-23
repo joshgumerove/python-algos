@@ -54,3 +54,39 @@ class Dijkstra():
         while actual_vertex is not None:
             print(actual_vertex.name, end=" ")
             actual_vertex = actual_vertex.predecessor
+
+
+# Step 1 - Create the Nodes
+node_a = Node("A")
+node_b = Node("B")
+node_c = Node("C")
+node_d = Node("D")
+node_e = Node("E")
+node_f = Node("F")
+node_g = Node("G")
+node_h = Node("H")
+
+# Step 2 - Create the Edges
+
+node_a.add_edge(6, node_b)
+node_a.add_edge(10, node_c)
+node_a.add_edge(9, node_d)
+
+node_b.add_edge(5, node_d)
+node_b.add_edge(16, node_e)
+node_b.add_edge(13, node_f)
+
+node_c.add_edge(6, node_d)
+node_c.add_edge(21, node_g)
+node_c.add_edge(5, node_h)
+
+node_d.add_edge(8, node_f)
+node_d.add_edge(7, node_h)
+
+node_e.add_edge(10, node_g)
+
+node_f.add_edge(4, node_e)
+node_f.add_edge(12, node_g)
+
+node_h.add_edge(2, node_f)
+node_h.add_edge(14, node_g)
