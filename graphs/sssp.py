@@ -30,14 +30,14 @@ class Dijkstra():
 
     def calculate(self, start_vertex):
         start_vertex.min_distance = 0
-        heapq.heappushpop(self.heap, start_vertex)
+        heapq.heappush(self.heap, start_vertex)
         while self.heap:
             # pop element with the lowest distance
             actual_vertex = heapq.heappop(self.heap)
             if actual_vertex.visited:
                 continue
             # consider neighbors
-            for edge in start_vertex.neighbors:
+            for edge in actual_vertex.neighbors:
                 start = edge.start_vertex
                 target = edge.target_vertex
                 new_distance = start.min_distance + edge.weight
@@ -90,3 +90,7 @@ node_f.add_edge(12, node_g)
 
 node_h.add_edge(2, node_f)
 node_h.add_edge(14, node_g)
+
+algorithm = Dijkstra()
+algorithm.calculate(node_a)
+algorithm.get_shortest_path(node_b)
