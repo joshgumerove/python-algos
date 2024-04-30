@@ -25,3 +25,15 @@ class DisjointSet():
         else:
             self.rank[y_root] = x_root
             self.rank[x_root] += 1
+
+
+vertices = ["A", "B", "C", "D", "E"]
+ds = DisjointSet(vertices)
+
+print(ds.parent)
+print(ds.rank)
+
+ds.union("A", "C")
+print(ds.find("A"))
+
+print(ds.rank)
