@@ -11,7 +11,14 @@ activities = [
 
 def print_max_activities(activities):
     activities.sort(key=lambda x: x[2])
-    print(activities)
+    i = 0
+    first_a = activities[i][0]
+    print(first_a)
+
+    for j in range(len(activities)):
+        if activities[j][1] > activities[i][2]:
+            print(activities[j][0])
+            i = j  # current activity then becomes previous activity
 
 
 print_max_activities(activities)
