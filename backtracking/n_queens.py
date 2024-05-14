@@ -33,10 +33,28 @@ class NQueens():
             j = j - 1
         
         return True
+    
+    def solve(self, col_index):
+        if col_index == self.n:
+            return True
+        for row_index in range(self.n):
+            if self.is_safe_place(row_index, col_index):
+                self.chess_table[row_index][col_index] = 1
+                if self.solve(col_index + 1):
+                    return True
+                self.chess_table[row_index][col_index] = 0
+            
+        return False
+    
+    def solve_nqueens(self):
+        if self.solve(0):
+            self.print_queens()
+        else:
+            print("There is no solution")
             
     
         
 
 queens = NQueens(4)
-queens.print_queens()
+queens.solve_nqueens()
 
